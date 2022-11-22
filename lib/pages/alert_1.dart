@@ -1,4 +1,5 @@
 import 'dart:js';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 /*
 class dise_1 extends StatelessWidget {
@@ -10,19 +11,25 @@ class dise_1 extends StatelessWidget {
 }
 */
 
-class alert_1 extends StatelessWidget {
+class alert_1 extends StatelessWidget 
+{
   //const AlertPage ({super.key});
 
-// creacion de un metodo 
-
-ShowMyAlert (BuildContext context) {
+ // creacion de un metodo 
+   
+ ShowMyAlert (BuildContext context) 
+ {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('alert dialog example'),
-        backgroundColor: Colors.white,
-        content: Text('esto es un ejemplo de una alert dialog'
+      return CupertinoAlertDialog(
+        title: Text(
+          'Blog post published',
+          textAlign: TextAlign.left,
+          ),
+        //backgroundColor: Colors.white,
+        content: Text('This blog post has been published. Team members will be able to edit this post and republish changes.',
+        textAlign: TextAlign.left,
         ),
       actions: [
         //primer boton 
@@ -31,7 +38,7 @@ ShowMyAlert (BuildContext context) {
             //al hacer click en este boton se cierra la ventana 
             Navigator.pop(context);
           }, 
-        child: Text('cancelar'),
+        child: Text('Cancel'),
          ),
 
         //segundo boton
@@ -39,13 +46,18 @@ ShowMyAlert (BuildContext context) {
           onPressed:() {
             Navigator.pop(context);
           }, 
-        child: Text('aceptar'),
+        child: 
+        Text(
+          'Confirm',
+          
+          ),
+          
          ), 
        ],
     );
   },
   );
-}
+ }
 
 
   @override
